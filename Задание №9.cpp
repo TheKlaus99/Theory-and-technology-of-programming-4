@@ -10,7 +10,6 @@
 
 using namespace std;
 
-//555
 /*long double series_arcsin(long double x, long double epsilon) {
 
 	int n = 0;
