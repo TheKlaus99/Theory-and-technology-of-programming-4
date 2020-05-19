@@ -10,6 +10,7 @@
 
 using namespace std;
 
+
 /*long double series_arcsin(long double x, long double epsilon) {
 
 	int n = 0;
@@ -38,32 +39,29 @@ bool sinus(double x) {
 }
 
 
-int main()
-{
+int main() {
 	setlocale(LC_ALL, "Russian");
+
+
 	HINSTANCE hLib = LoadLibrary(L"Lab_9.dll");
 	if (hLib == NULL)
 	{
-		cout << "Unable to load library!" << endl;
+		cout << "Ошибка! Не удается загрузить библиотеку! " << endl;
 		return 0;
 	}
 
 
-	cout << "Загружаем библиотеку..." << "\n";
+	cout << "Загружаем библиотеку... " << endl << endl;
 	typedef double (*Func)(long double, long double);
 
 	auto pFunction = (Func)GetProcAddress(hLib, "series_arcsin");
 
 	if (pFunction == NULL)
 	{
-		cout << "Unable to load function(s)." << endl;
+		cout << "Не удается загрузить функцию! " << endl;
 		FreeLibrary(hLib);
 		return 0;
 	}
-
-
-
-
 
 
 	long double eps;
